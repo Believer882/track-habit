@@ -1,5 +1,19 @@
-window.onload = () => {
+window.onload = async () => {
   load()
+
+  const cloudData = await loadFromCloud()
+  if(cloudData){
+    cloudData.forEach(d=>{
+      store[d.date] = {
+        tasks: d.tasks || {},
+        water: d.water || 0,
+        mood: d.mood,
+        timeLog: d.time_log || {},
+        pomoCount: d.pomo_count || 0
+      }
+    })
+  }
+
   buildTasks()
   buildWater()
   buildMood()
