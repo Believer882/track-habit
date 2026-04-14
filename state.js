@@ -33,9 +33,15 @@ function load(){
   }
 }
 
-function save(){
+async function save(){
   try{
     localStorage.setItem(KEY, JSON.stringify(store))
+
+    await saveToCloud({
+      date: todayStr(),
+      ...today()
+    })
+
   }catch(e){
     console.error(e)
   }
