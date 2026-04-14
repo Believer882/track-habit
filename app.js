@@ -1,4 +1,11 @@
-
+window.onload = () => {
+  load()
+  buildTasks()
+  buildWater()
+  buildMood()
+  buildPomoSelect()
+  updateAll()
+}
 // ══════════════════════════════════════════════
 // DATA
 // ══════════════════════════════════════════════
