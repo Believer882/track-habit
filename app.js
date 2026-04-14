@@ -41,7 +41,7 @@ const DAYS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 // ══════════════════════════════════════════════
 // STATE
 // ══════════════════════════════════════════════
-let store = {}; // { [date]: { tasks:{}, water:0, mood:null, timeLog:{id:mins}, pomoCount:0 } }
+
 let currentModalTask = null;
 let pomoInterval = null;
 let pomoRunning = false;
@@ -49,16 +49,7 @@ let pomoSecsLeft = 25*60;
 let pomoIsBreak = false;
 let pomoTotalToday = 0;
  
-function todayStr(){ return new Date().toISOString().slice(0,10); }
-function getDay(d){ if(!store[d]) store[d]={tasks:{},water:0,mood:null,timeLog:{},pomoCount:0}; return store[d]; }
-function today(){ return getDay(todayStr()); }
- 
-function load(){
-  try{ const s=localStorage.getItem(KEY); if(s) store=JSON.parse(s); }catch(e){ store={}; }
-}
-function save(){
-  try{ localStorage.setItem(KEY,JSON.stringify(store)); }catch(e){}
-}
+
  
 // ══════════════════════════════════════════════
 // TASK RENDERING
