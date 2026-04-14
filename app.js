@@ -1,4 +1,4 @@
-<script>
+
 // ══════════════════════════════════════════════
 // DATA
 // ══════════════════════════════════════════════
@@ -636,4 +636,4 @@ updatePomoDial();
 document.getElementById('pomoCount').textContent=today().pomoCount||0;
 updateAll();
 renderCalendar();
-</script>
+
